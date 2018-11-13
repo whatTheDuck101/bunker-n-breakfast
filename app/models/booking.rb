@@ -1,5 +1,5 @@
 
-STATUS = [:pending, :accepted, :denied]
+STATUS = ["pending", "accepted", "denied"]
 
 class Booking < ApplicationRecord
   belongs_to :user
