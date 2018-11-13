@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  protect_from_forgery
+  before_action :authenticate_user!
   after_action :store_action
 
   def store_action
