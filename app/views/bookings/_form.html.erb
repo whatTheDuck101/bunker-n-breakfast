@@ -1,5 +1,8 @@
-<%= simple_form_for @bunker do |f| %>
-  <%= f.input :bunker %>
+
+<%= simple_form_for @booking do |f| %>
+  <%= f.input :name %>
+  <%= f.input :location %>
+  <%= f.input :price %>
   <%= f.button :submit, class: 'btn btn-primary' %>
 <% end %>
 
