@@ -6,10 +6,6 @@ class BunkersController < ApplicationController
   end
 
   def show
-    raise
-    # @bunker_id = @bunker.id
-    # @user_bunker_id = @bunker.user.id
-    # raise
   end
 
   def new
