@@ -6,7 +6,6 @@ class BunkersController < ApplicationController
   end
 
   def show
-
   end
 
   def new
