@@ -1,1 +1,37 @@
 <h1> Detail of Bunker</h1>
+
+<div class="map" style="background-image: url(<%= image_path 'bunker.jpeg'%>)"></div>
+
+<div class="container margin-top-negative">
+  <div class="row">
+    <div class="col-8">
+      <div class="flat-show-card">
+        <h1><%= @bunker.name %></h1>
+        <p class="flat-show-address"><%= @bunker.location %></p>
+      </div>
+      <div class="flat-show-card">
+        <h3>A bit more about this bunker...</h3>
+        <p><%= @bunker.description %></p>
+        <div class="map" style="background-image: url(<%= image_path 'bunker.jpeg'%>)"></div>
+      </div>
+    </div>
+
+    <div class="col-4">
+      <div class="flat-show-card">
+        <h5>Book this place!</h5>
+
+        <%= link_to 'Send a Request', bunker_bookings_path(@bunker.id), class: 'btn btn-primary my-2 my-sm-0 ml-2', method: :post %>
+
+      </div>
+      <div class="flat-show-card">
+        <h3>Details</h3>
+        <div class="flex">
+          </div>
+          <div class="flex ml-3">
+            <i class="fas fa-dollar-sign"></i> <%= @bunker.price %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
