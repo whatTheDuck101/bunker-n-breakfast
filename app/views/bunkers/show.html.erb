@@ -20,7 +20,7 @@
       <div class="flat-show-card">
         <h5>Book this place!</h5>
 
-        <%= link_to 'Send a Request', new_bunker_booking_path(@bunker.id), class: 'btn btn-primary my-2 my-sm-0 ml-2' %>
+        <%= link_to 'Send a Request', bunker_bookings_path(@bunker.id), class: 'btn btn-primary my-2 my-sm-0 ml-2', method: :post %>
 
       </div>
       <div class="flat-show-card">
