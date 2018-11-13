@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
         !request.xhr?) # don't store ajax calls
       store_location_for(:user, bunkers_path)
     end
-  end 
+  end
 
 
 
@@ -44,6 +44,5 @@ class ApplicationController < ActionController::Base
 
   def skip_pundit?
     devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)/
-
   end
 end
