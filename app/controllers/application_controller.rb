@@ -17,6 +17,7 @@ class ApplicationController < ActionController::Base
         !request.xhr?) # don't store ajax calls
       store_location_for(:user, bunkers_path)
     end
+  end 
 
 
 
