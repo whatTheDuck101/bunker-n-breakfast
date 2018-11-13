@@ -2,7 +2,7 @@ class BookingsController < ApplicationController
 
 #missing pundit and validations
   def index
-    @bookings = Booking.all
+    @bookings = policy_scope(Booking)
   end
 
   # def new
@@ -15,6 +15,7 @@ class BookingsController < ApplicationController
     # @user_bunker_id = @bunker.user.id
     @booking.bunker = @bunker
     @booking.user = current_user
+    authorize(@booking)
     if @booking.save
       redirect_to bunker_path(@bunker)
     else
@@ -32,6 +33,7 @@ class BookingsController < ApplicationController
 
   def find_bunker
     @bunker = Bunker.find(params[:bunker_id])
+    authorize(@bunker)
   end
 
   # def booking_params
