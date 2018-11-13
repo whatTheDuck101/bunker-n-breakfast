@@ -1,6 +1,7 @@
 class BookingsController < ApplicationController
+# missing pundit and validations
+  before_action :find_bunker, only: [:create]
 
-#missing pundit and validations
   def index
     @bookings = policy_scope(Booking)
   end
@@ -11,21 +12,18 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new
-    # @bunker_id = @bunker.id
-    # @user_bunker_id = @bunker.user.id
     @booking.bunker = @bunker
     @booking.user = current_user
     authorize(@booking)
+
     if @booking.save
-      redirect_to bunker_path(@bunker)
+      redirect_to bookings_path
     else
       render :new
     end
   end
 
   def update
-  # changes states
-  # @booking = Booking.find(params[:id])
 
   end
 
