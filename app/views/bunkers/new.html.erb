@@ -5,6 +5,9 @@
 
       <%= simple_form_for @bunker do |f| %>
         <%= f.input :name %>
+        <%= f.input :location %>
+        <%= f.input :price %>
+        <%= f.input :description %>
         <%= f.button :submit, class: 'btn btn-primary' %>
       <% end %>
     </div>

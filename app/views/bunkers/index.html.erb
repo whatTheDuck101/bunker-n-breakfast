@@ -9,7 +9,9 @@
     <% @bunkers.each do |bunker| %>
       <div class="col-4">
         <div class="bunker-card">
-          <div class="bunker-card-image" style="background-image: url('../../assets/images/bunker.jpeg')"></div>
+          <%= link_to bunker_path(bunker.id) do %>
+            <div class="bunker-card-image" style="background-image: url(<%= image_path 'bunker.jpeg'%>)"></div>
+          <% end %>
           <div class="bunker-card-content">
             <div class="bunker-card-title">
               <h4><%= bunker.name %></h4>
@@ -24,4 +26,8 @@
     <% end %>
   </div>
 </div>
+
+
+
+
 
