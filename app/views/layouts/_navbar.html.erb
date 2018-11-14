@@ -14,7 +14,8 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to 'My Bunkers',bookings_path, class: "navbar-bunker-item navbar-bunker-link" %>
+      <%= link_to 'My Bunkers', mybunkers_path, class: "navbar-bunker-item navbar-bunker-link" %>
+
       <%= link_to "My trips", bookings_path, class: "navbar-bunker-item navbar-bunker-link" %>
 
       <!-- Avatar with dropdown menu -->

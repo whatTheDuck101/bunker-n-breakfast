@@ -7,6 +7,10 @@ class BunkerPolicy < ApplicationPolicy
     true
   end
 
+  def my_bunkers?
+    true
+  end
+
   private
 
   def user_is_logged_in?

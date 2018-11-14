@@ -8,6 +8,11 @@ class BunkersController < ApplicationController
   def show
   end
 
+  def my_bunkers
+    @bunkers = current_user.bunkers
+    authorize(@bunkers)
+  end
+
   def new
     @bunker = Bunker.new
     authorize(@bunker)
