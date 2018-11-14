@@ -4,12 +4,13 @@ class BookingPolicy < ApplicationPolicy
       true
     end
 
-    def create
-      user_is_logged_in
+    def create?
+      user_is_logged_in?
+
     end
 
-    def update
-      user_is_logged_in
+    def update?
+      user_is_logged_in?
     end
 
   private

@@ -1,17 +1,20 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-8 col-md-offset-2">
-      <h1>Host a new Bunker</h1>
-
-      <%= simple_form_for @bunker do |f| %>
-        <%= f.input :name %>
-        <%= f.input :location %>
-        <%= f.input :price %>
-        <%= f.input :description %>
-        <%= f.input :picture %>
-        <%= f.input :picture_cache, as: :hidden %>
-        <%= f.button :submit, class: 'btn btn-primary' %>
-      <% end %>
+    <div class="col-md-5 col-md-offset-3">
+      <div = class="text-center">
+       <h1>Host a new Bunker</h1>
+      </div>
+        <div = class="form_content">
+        <%= simple_form_for @bunker do |f| %>
+          <%= f.input :name %>
+          <%= f.input :location %>
+          <%= f.input :price %>
+          <%= f.input :description %>
+          <%= f.input :picture %>
+          <%= f.input :picture_cache, as: :hidden %>
+          <%= f.button :submit, class: 'btn_submit' %>
+        <% end %>
+       </div>
     </div>
   </div>
 </div>
