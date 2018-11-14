@@ -4,15 +4,14 @@
       <div = class="text-center">
        <h1>Host a new Bunker</h1>
       </div>
-        <div = class="form_content">
         <%= simple_form_for @bunker do |f| %>
           <%= f.input :name %>
           <%= f.input :location %>
           <%= f.input :price %>
           <%= f.input :description %>
-          <%= f.input :picture %>
-          <%= f.input :picture_cache, as: :hidden %>
-          <%= f.button :submit, class: 'btn_submit' %>
+          <%= f.input :photo %>
+          <%= f.input :photo_cache, as: :hidden %>
+          <%= f.button :submit, class: 'btn btn-primary' %>
         <% end %>
        </div>
     </div>

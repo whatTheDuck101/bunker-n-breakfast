@@ -15,8 +15,10 @@ class BunkersController < ApplicationController
 
   def create
     @bunker = Bunker.new(bunker_params)
+    @bunker.user = current_user
     authorize(@bunker)
-    if @bunker.save
+
+    if @bunker.save!
       redirect_to bunkers_path
     else
       render :new
@@ -31,6 +33,6 @@ class BunkersController < ApplicationController
   end
 
   def bunker_params
-    params.require(:bunker).permit(:name, :location, :description, :picture, :is_available, :price)
+    params.require(:bunker).permit(:name, :location, :description, :photo, :is_available, :price)
   end
 end
