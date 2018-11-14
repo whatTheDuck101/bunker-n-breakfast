@@ -5,6 +5,7 @@ class BookingsController < ApplicationController
   def index
     @bookings = policy_scope(Booking)
     @user_bookings = current_user.bookings
+    raise
   end
 
   # def new
