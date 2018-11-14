@@ -17,15 +17,25 @@
 
     <div class="wrapper-mint padded">
        <div class="container">
-        <div class="row">
-          <% @user_bookings.each do |booking| %>
-          <li><%= current_user.first_name %></li>
-          <li><%= current_user.email.split("@")[0] %></li>
-          <li><%= booking.bunker.name %> - host: <%= booking.bunker.user.first_name %></li>
-          <li><strong><%= booking.status %></strong></li>
-          <br>
-          <% end %>
-        </div>
+          <div class="row">
+            <h1>My Booking List</h1>
+            <% @user_bookings.each do |booking| %>
+              <div class="message">
+                <!-- <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan"> -->
+                <div class="message-name">
+                  <p><%= current_user.email.split("@")[0] %></p>
+                </div>
+                <div class="message-body">
+                  <p><strong>Is it available? </strong></p>
+                </div>
+                <div class="message-status">
+                  <p><%= booking.bunker.name %></p>
+                  <p>host: <%= booking.bunker.user.first_name %></p>
+                  <p class="status"><strong><%= booking.status %></strong></p>
+                </div>
+              </div>
+            <% end %>
+          </div>
        </div>
     </div>
 
