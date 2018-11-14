@@ -16,7 +16,7 @@
             <div class="bunker-card-title">
               <h4><%= bunker.name %></h4>
             </div>
-            <p><%= bunker.location %></p>
+            <p><%= bunker.address %></p>
             <div class="flex">
               <i class="fas fa-dollar-sign"></i><%= bunker.price %>
             </div>
@@ -26,3 +26,9 @@
     <% end %>
   </div>
 </div>
+
+<div
+  id="map"
+  style="width: 100%; height: 600px;"
+  data-markers="<%= @markers.to_json %>"
+></div>

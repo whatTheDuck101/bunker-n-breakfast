@@ -2,7 +2,7 @@ class CreateBunkers < ActiveRecord::Migration[5.2]
   def change
     create_table :bunkers do |t|
       t.string :name
-      t.text :location
+      t.text :address
       t.float :price
       t.text :description
       t.string :picture

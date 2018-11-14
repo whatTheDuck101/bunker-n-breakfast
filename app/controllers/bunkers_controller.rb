@@ -3,6 +3,14 @@ class BunkersController < ApplicationController
 
   def index
     @bunkers = policy_scope(Bunker)
+    @bunkers_location = Bunker.where.not(latitude: nil, longitude: nil)
+    @markers = @bunkers_location.map do |bunker|
+      {
+        lng: bunker.longitude,
+        lat: bunker.latitude, 
+        infoWindow: { content: render_to_string(partial: "/bunkers/map_window", locals: { bunker: bunker })}
+      }
+    end
   end
 
   def show
@@ -39,6 +47,6 @@ class BunkersController < ApplicationController
   end
 
   def bunker_params
-    params.require(:bunker).permit(:name, :location, :description, :photo, :is_available, :price)
+    params.require(:bunker).permit(:name, :address, :description, :photo, :is_available, :price)
   end
 end
