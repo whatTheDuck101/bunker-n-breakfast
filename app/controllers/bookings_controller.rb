@@ -4,6 +4,7 @@ class BookingsController < ApplicationController
 
   def index
     @bookings = policy_scope(Booking)
+    @user_bookings = current_user.bookings
   end
 
   # def new
@@ -14,6 +15,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new
     @booking.bunker = @bunker
     @booking.user = current_user
+
     authorize(@booking)
 
     if @booking.save
