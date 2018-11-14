@@ -13,6 +13,7 @@
 <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
+
       <h2>Sign in</h2>
       <%= simple_form_for(User.new, url: user_session_path ) do |f| %>
         <div class="form-inputs">
@@ -26,9 +27,10 @@
         </div>
 
         <div class="form-actions">
-          <%= f.button :submit, "Log in" %>
+          <%= f.button :submit, "Log in", :class => "btn-primary"  %>
         </div>
       <% end %>
+
     </div>
   </div>
 </div>
@@ -63,7 +65,7 @@
         </div>
 
         <div class="form-actions">
-          <%= f.button :submit, "Sign up" %>
+          <%= f.button :submit, "Sign up", :class => "btn-primary"   %>
         </div>
       <% end %>
     </div>
