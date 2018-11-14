@@ -1,0 +1,5 @@
+<p>Hi! you've reached the my bunkers page</p>
+
+<% @bunkers.each do |bunker| %>
+  <p> <%= bunker.name %>: <%= bunker.is_available %> </p>
+<% end %>
