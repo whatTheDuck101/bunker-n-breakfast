@@ -30,7 +30,7 @@ end
 
 puts "Creating Bunkers"
 owners.each do |owner|
-  bunker = Bunker.new(name: Faker::GameOfThrones.house, location: Faker::GameOfThrones.city, price: Faker::Commerce.price, description: Faker::GameOfThrones.quote, picture: "url")
+  bunker = Bunker.new(name: Faker::GameOfThrones.house, address: Faker::GameOfThrones.city, price: Faker::Commerce.price, description: Faker::GameOfThrones.quote, picture: "url")
   bunker.user = owner
   bunker.save
   bunkers << bunker
@@ -46,4 +46,3 @@ puts "Creating Bookings"
   booking.user = borrower
   booking.save
 end
-
