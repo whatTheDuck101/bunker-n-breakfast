@@ -10,7 +10,7 @@
       <div class="col-4">
         <div class="bunker-card">
           <%= link_to bunker_path(bunker.id) do %>
-            <div class="bunker-card-image" style="background-image: url(<%= cl_image_path bunker.photo%>)"></div>
+          <div class="bunker-card-image" style="background-image: url(<%= cl_image_path bunker.photo%>)"></div>
           <% end %>
           <div class="bunker-card-content">
             <div class="bunker-card-title">
@@ -25,6 +25,7 @@
       </div>
     <% end %>
   </div>
+
 </div>
 
 <div
