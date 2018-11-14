@@ -12,7 +12,7 @@
       <div class="flat-show-card">
         <h3>A bit more about this bunker...</h3>
         <p><%= @bunker.description %></p>
-        <div class="map" style="background-image: url(<%= image_path 'bunker.jpeg'%>)"></div>
+        <div class="map" style="background-image: url(<%= cl_image_path @bunker.photo%>)"></div>
       </div>
     </div>
 
