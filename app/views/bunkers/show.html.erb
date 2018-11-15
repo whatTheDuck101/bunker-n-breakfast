@@ -18,7 +18,7 @@
       <div class="flat-show-card">
         <h5 class="danger">Book this place!</h5>
         <div>
-         <i class="fas fa-dollar-sign"></i> <%= @bunker.price %> </div>
+         <i class="fas fa-dollar-sign"></i> <%= number_with_delimiter(@bunker.price, :delimiter => ',') %> </div>
         <div>
           till the end of the world... </div>
         <div class="container mt-10">

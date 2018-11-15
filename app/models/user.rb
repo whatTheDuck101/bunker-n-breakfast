@@ -6,6 +6,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :bookings
   has_many :bunkers
+  has_many :owned_bunkers_bookings, through: :bunkers, source: :bookings
   validates :first_name, presence: true
   validates :last_name, presence: true
 end
