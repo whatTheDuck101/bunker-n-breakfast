@@ -27,10 +27,11 @@
               <li>description: <%= bunker.description %></li>
               <li>price: $<%= bunker.price %></li>
 
-            <% if !bunker.bookings.empty? %>
-             <p class="danger"><strong> Got a request! </strong></p>
-                  <botton class= "btn btn-success">Accept</botton>
-                  <botton class= "btn btn-danger">Refuse</botton>
+            <% if bunker.bookings.first.status == "pending" %>
+
+             <%= link_to "Accept", bunker_booking_path(bunker.id, bunker.bookings.first.id, { value: "accepted" }), class: 'btn btn-success', method: :patch %>
+             <%= link_to "Refuse", bunker_booking_path(bunker.id, bunker.bookings.first.id, { value: "denied" }), class: 'btn btn-danger', method: :patch %>
+
             <% end %>
           </div>
          <% end %>
