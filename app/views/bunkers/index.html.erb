@@ -1,35 +1,45 @@
-<div class="container mt-3">
-  <div class="row">
-    <div class="col-12">
-      <h1>All our Bunkers</h1>
+<div class="banner banner-md" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= image_path 'banner_bunker.jpg', class: "img-responsive"%>);">
+    <div class="banner-content content-md">
+      <h4>The possibilities are endless.</h4>
+      <h4>Find the bunker right for you.</h4>
+      <h4>Breakfast Included.</h4>
     </div>
+</div>
+
+
+
+
+
+<div class="container mt-3">
+  <div class="container padded">
+      <h2>Recommended for you</h2>
   </div>
 
-  <div class="row">
-    <% @bunkers.each do |bunker| %>
-      <div class="col-xs-4">
-        <div class="bunker-card">
-          <%= link_to bunker_path(bunker.id) do %>
-          <div class="bunker-card-image" style="background-image: url(<%= cl_image_path bunker.photo%>)"></div>
-          <% end %>
-          <div class="bunker-card-content">
-            <div class="bunker-card-title">
-              <h4><%= bunker.name %></h4>
-            </div>
-            <p><%= bunker.address %></p>
-            <div class="flex">
-              <i class="fas fa-dollar-sign"></i><%= bunker.price %>
+  <div class="container">
+    <div class="row">
+      <% @bunkers.each do |bunker| %>
+        <div class="col-xs-4">
+          <div class="flat-card">
+            <%= link_to bunker_path(bunker.id) do %>
+            <div class="flat-card-image" style="background-image: url(<%= cl_image_path bunker.photo%>)"></div>
+            <% end %>
+            <div class="flat-card-content">
+              <div class="flat-card-title">
+                <strong><%= bunker.name %></strong>
+              </div>
+              <div>
+               <i class="fas fa-map-marker-alt"></i>  <%= bunker.address %>
+              </div>
+              <div>
+               <i class="fas fa-dollar-sign">   </i><%= bunker.price %>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 
 </div>
 
-<div
-  id="map"
-  style="width: 100%; height: 600px;"
-  data-markers="<%= @markers.to_json %>"
-></div>
+<%= render "shared/map" %>

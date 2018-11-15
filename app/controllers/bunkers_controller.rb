@@ -1,5 +1,6 @@
 class BunkersController < ApplicationController
   before_action :find_bunker, only: [:show]
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
     @bunkers = policy_scope(Bunker)
