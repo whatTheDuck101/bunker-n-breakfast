@@ -1,27 +1,27 @@
+<div class="bg-half mask-black" style="background-image: url(<%= image_path 'endoftheworld1.jpg'%>)">
+  <div class="container padded">
+   <h1 style="color: #FFFFFF">My Booking List <i class="fas fa-bed"></i> </h1>
+  </div>
+</div>
 
-
-    <div class="wrapper-mint padded">
+    <div class="wrapper-dark-gray padded">
        <div class="container">
-          <div class="row">
-            <h1>My Booking List <i class="fas fa-bed"></i> </h1>
-            <% @user_bookings.each do |booking| %>
-              <div class="message">
-                <!-- <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan"> -->
-                <div class="message-name">
-                  <p><%= current_user.email.split("@")[0] %></p>
-                </div>
-                <div class="message-body">
-                  <p><em>sent a request </em></p>
-                </div>
-                <div class="message-status">
-                  <p><%= booking.bunker.name %></p>
-                  <p>host: <%= booking.bunker.user.first_name %></p>
-                  <p class="status"><strong><%= booking.status %></strong></p>
-                </div>
-              </div>
-            <% end %>
+       <% @user_bookings.each do |booking| %>
+          <div class="message">
+            <!-- <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan"> -->
+            <div class="message-name">
+              <p><%= booking.bunker.name %></p>
+                 <!-- <p><%= current_user.email.split("@")[0] %></p> -->
+            </div>
+            <div class="message-body">
+              <p><em>sent a request to "<%= booking.bunker.user.first_name %>" </em> </p>
+            </div>
+            <div class="message-status">
+              <p class="status"><strong><%= booking.status %></strong></p>
+            </div>
           </div>
-       </div>
+       <% end %>
+     </div>
     </div>
 
      <div class="wrapper-darkmint padded">

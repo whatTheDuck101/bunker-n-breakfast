@@ -1,10 +1,7 @@
-    <div class="container padded" >
-      <div class="row">
-        <div class="col-12">
-          <h1>My Bunkers <i class="fas fa-home"></i> </h1>
-        </div>
-      </div>
-      <div class="row">
+ <div class="bg-half mask-black" style="background-image: url(<%= image_path 'endoftheworld-earth.jpg'%>)">
+  <div class="container padded">
+   <h1 style="color: #FFFFFF">My Bunkers <i class="fas fa-home"></i> </h1>
+   <div class="row">
         <div class="col-xs-4">
          <% if policy(Bunker).new? %>
           <%= link_to new_bunker_path do %>
@@ -13,28 +10,56 @@
          <% end %>
         </div>
       </div>
-    </div>
+  </div>
+</div>
 
-     <div class="wrapper-darkmint padded">
+
+     <div class="wrapper-light-blu padded">
        <div class="container">
         <div class="row">
+          <h2>View all my bunkers</h2>
+
+        <div class="container">
+         <div class="row">
+
+
           <% @bunkers.each do |bunker| %>
+           <div class="col-xs-4">
             <div class="card">
               <div class="bunker-card-image" style="background-image: url(<%= cl_image_path bunker.photo%>)"></div>
-              </div>
-              <li>name: <%= bunker.name %></li>
-              <li>address: <%= bunker.address %></li>
-              <li>description: <%= bunker.description %></li>
-              <li>price: $<%= bunker.price %></li>
+                <div class="flat-card-content">
+                 <div class="flat-card-title">
+                   <strong><%= bunker.name %></strong>
+                 </div>
+                 <div>
+                   <i class="fas fa-map-marker-alt"></i>  <%= bunker.address %>
+                 </div>
+                 <div>
+                   <i class="fas fa-dollar-sign">   </i><%= bunker.price %>
+                 </div>
+                </div>
 
-            <% if !bunker.bookings.empty? %>
-             <p class="danger"><strong> Got a request! </strong></p>
+                <% if !bunker.bookings.empty? %>
+                 <p class="danger"><strong> Got a request! </strong></p>
                   <botton class= "btn btn-success">Accept</botton>
                   <botton class= "btn btn-danger">Refuse</botton>
-            <% end %>
+                <% end %>
+            </div>
           </div>
-         <% end %>
+          <% end %>
+
+        </div>
+      </div>
+
         </div>
        </div>
      </div>
+
+    <div class="wrapper-beige  padded">
+       <div class="container">
+        <h2>Requests</h2>
+       </div>
+    </div>
+
+
 

@@ -1,29 +1,31 @@
 <div class="container mt-3">
-  <div class="row">
-    <div class="col-12">
-      <h1>All our Bunkers</h1>
-    </div>
+  <div class="container padded">
+      <h2>Recommended for you</h2>
   </div>
 
-  <div class="row">
-    <% @bunkers.each do |bunker| %>
-      <div class="col-xs-4">
-        <div class="bunker-card">
-          <%= link_to bunker_path(bunker.id) do %>
-          <div class="bunker-card-image" style="background-image: url(<%= cl_image_path bunker.photo%>)"></div>
-          <% end %>
-          <div class="bunker-card-content">
-            <div class="bunker-card-title">
-              <h4><%= bunker.name %></h4>
-            </div>
-            <p><%= bunker.address %></p>
-            <div class="flex">
-              <i class="fas fa-dollar-sign"></i><%= bunker.price %>
+  <div class="container">
+    <div class="row">
+      <% @bunkers.each do |bunker| %>
+        <div class="col-xs-4">
+          <div class="flat-card">
+            <%= link_to bunker_path(bunker.id) do %>
+            <div class="flat-card-image" style="background-image: url(<%= cl_image_path bunker.photo%>)"></div>
+            <% end %>
+            <div class="flat-card-content">
+              <div class="flat-card-title">
+                <strong><%= bunker.name %></strong>
+              </div>
+              <div>
+               <i class="fas fa-map-marker-alt"></i>  <%= bunker.address %>
+              </div>
+              <div>
+               <i class="fas fa-dollar-sign">   </i><%= bunker.price %>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 
 </div>
