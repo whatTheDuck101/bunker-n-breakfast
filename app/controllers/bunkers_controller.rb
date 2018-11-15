@@ -4,7 +4,20 @@ class BunkersController < ApplicationController
 
   def index
     @bunkers = policy_scope(Bunker)
-    @bunkers_location = Bunker.where.not(latitude: nil, longitude: nil)
+
+    if params[:query_address].present?
+      @bunkers = Bunker.near(params[:query_address], 100)
+    end
+
+    if params[:min_price].present?
+      @bunkers = @bunkers.in_price_min(params[:min_price])
+    end
+
+    if params[:max_price].present?
+      @bunkers = @bunkers.in_price_max(params[:max_price])
+    end
+    
+    @bunkers_location = @bunkers.where.not(latitude: nil, longitude: nil)
     @markers = @bunkers_location.map do |bunker|
       {
         lng: bunker.longitude,
