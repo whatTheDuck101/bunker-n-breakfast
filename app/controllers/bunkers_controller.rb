@@ -1,5 +1,6 @@
 class BunkersController < ApplicationController
   before_action :find_bunker, only: [:show]
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
     @bunkers = policy_scope(Bunker)
@@ -7,7 +8,7 @@ class BunkersController < ApplicationController
     @markers = @bunkers_location.map do |bunker|
       {
         lng: bunker.longitude,
-        lat: bunker.latitude, 
+        lat: bunker.latitude,
         infoWindow: { content: render_to_string(partial: "/bunkers/map_window", locals: { bunker: bunker })}
       }
     end
