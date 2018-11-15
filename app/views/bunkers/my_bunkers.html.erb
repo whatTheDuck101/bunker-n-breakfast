@@ -40,7 +40,7 @@
                  </div>
                 </div>
 
-                <% if !bunker.bookings.empty? %>
+                <% if !bunker.bookings.empty? && bunker.bookings.first.status == "pending"%>
                  <%= link_to "Accept", bunker_booking_path(bunker.id, bunker.bookings.first.id, { value: "accepted" }), class: 'btn btn-success', method: :patch %>
              <%= link_to "Refuse", bunker_booking_path(bunker.id, bunker.bookings.first.id, { value: "denied" }), class: 'btn btn-danger', method: :patch %>
 
