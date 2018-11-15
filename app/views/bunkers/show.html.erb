@@ -22,7 +22,10 @@
         <div>
           till the end of the world... </div>
         <div class="container mt-10">
-        <%= link_to 'Request to book', bunker_bookings_path(@bunker.id), class: 'btn btn-primary btn-lg', method: :post %>
+          <% if @bunker.is_available %>
+           <%= link_to 'Request to book', bunker_bookings_path(@bunker.id), class: 'btn btn-primary btn-lg', method: :post %>
+          <% end %>
+
       </div>
       <div class="flat-show-card">
         <h3>Details</h3>

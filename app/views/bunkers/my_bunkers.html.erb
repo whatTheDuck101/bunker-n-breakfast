@@ -1,3 +1,4 @@
+ <!-- banner -->
  <div class="bg-half mask-black" style="background-image: url(<%= image_path 'endoftheworld-earth.jpg'%>)">
   <div class="container padded">
    <h1 style="color: #FFFFFF">My Bunkers <i class="fas fa-home"></i> </h1>
@@ -12,8 +13,9 @@
       </div>
   </div>
 </div>
+<!--  -->
 
-
+<!-- all-bunkers -->
      <div class="wrapper-light-blu padded">
        <div class="container">
         <div class="row">
@@ -26,7 +28,7 @@
           <% @bunkers.each do |bunker| %>
            <div class="col-xs-4">
             <div class="card">
-              <div class="bunker-card-image" style="background-image: url(<%= cl_image_path bunker.photo%>)"></div>
+              <div class="flat-card-image" style="background-image: url(<%= cl_image_path bunker.photo%>)"></div>
 
                 <div class="flat-card-content">
                  <div class="flat-card-title">
@@ -40,11 +42,10 @@
                  </div>
                 </div>
 
-                <% if !bunker.bookings.empty? && bunker.bookings.first.status == "pending"%>
-                 <%= link_to "Accept", bunker_booking_path(bunker.id, bunker.bookings.first.id, { value: "accepted" }), class: 'btn btn-success', method: :patch %>
-             <%= link_to "Refuse", bunker_booking_path(bunker.id, bunker.bookings.first.id, { value: "denied" }), class: 'btn btn-danger', method: :patch %>
+                <btn class="btn-success"> edit </btn>
+                <btn class="btn-success"> delete </btn>
 
-                <% end %>
+
             </div>
 
           </div>
@@ -56,12 +57,32 @@
         </div>
        </div>
      </div>
+<!--  -->
+
+<!-- recieved-requeste -->
 
     <div class="wrapper-beige  padded">
        <div class="container">
         <h2>Requests</h2>
-       </div>
-    </div>
+
+      <div class="container">
+          <% @bunkers.each do |bunker| %>
+           <% if !bunker.bookings.empty? && bunker.bookings.first.status == "pending"%>
+              <div class="message">
+                 <div class="message-name">
+                   <p><%= bunker.name %></p>
+                 </div>
+                 <div class="message-body">
+                   <p><em>got a request from "<%= bunker.user.first_name %>" </em> </p>
+                 </div>
+                 <div class="message-status">
+                    <%= link_to "Accept", bunker_booking_path(bunker.id, bunker.bookings.first.id, { value: "accepted" }), class: 'btn btn-success', method: :patch %>
+                    <%= link_to "Refuse", bunker_booking_path(bunker.id, bunker.bookings.first.id, { value: "denied" }), class: 'btn btn-danger', method: :patch %>
+                 </div>
+               </div>
+            <% end %>
+          <% end %>
+     </div>
 
 
 
