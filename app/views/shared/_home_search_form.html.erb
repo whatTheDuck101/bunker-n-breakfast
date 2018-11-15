@@ -1,0 +1,4 @@
+<%= form_tag(bunkers_path, method: "get") do %>
+  <%= text_field_tag :query_address, placeholder: "test", id: "query-placeholder" %>
+  <%= submit_tag("Search", class: "btn btn-danger") %>
+<% end %>
