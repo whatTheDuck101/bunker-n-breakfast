@@ -43,9 +43,9 @@ if (mapElement) {
   }
 
   // Add the geocoded search on the map
-  map.addControl(
-    new MapboxGeocoder({
-      accessToken: mapboxgl.accessToken
-    })
-  );
+  //   map.addControl(
+  //     new MapboxGeocoder({
+  //       accessToken: mapboxgl.accessToken
+  //     })
+  //   );
 }
