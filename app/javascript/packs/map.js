@@ -11,7 +11,7 @@ if (mapElement) {
   // Init a new map object on the `map` container
   const map = new mapboxgl.Map({
     container: "map",
-    style: "mapbox://styles/mapbox/streets-v10"
+    style: "mapbox://styles/vishizaki/cjohmm3ju06xi2rlb7zdmfllj"
   });
 
   // Get the markers from the DOM element's `data-markers` attribute
