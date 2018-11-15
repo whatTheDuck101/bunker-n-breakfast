@@ -58,3 +58,18 @@
     border-color: orange;
   }
 }
+
+.banner-md {
+  color: white;
+  height: 60vh;
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover !important;
+  background-position: center !important;
+  display: flex;
+  align-items: center;
+}
+
+.content-md {
+  padding-left: 7%;
+  padding-top: 25%;
+}

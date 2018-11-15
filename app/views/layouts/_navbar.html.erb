@@ -1,10 +1,8 @@
 <div class="navbar-bunker">
-   <%= link_to root_path, class: "navbar-bunker-brand" do %>
-        <%= image_tag "bunker.png", height: 50 %>
-    <% end %>
   <!-- Logo -->
   <% if user_signed_in? %>
-    <%= link_to 'Bunker & Breakfast', bunkers_path, class: "navbar-bunker-item navbar-bunker-link" %>
+    <%= link_to "#{image_tag("bunker.png",  height: 50, alt: "bunker logo")} Bunkers & Breakfast".html_safe, bunkers_path, :class=>"navbar-bunker-brand navbar-bunker-link" %>
+
   <!-- bunker amd breakfast shoudl go to index -->
   <!-- user home page is the index and should be redirect -->
   <!-- bunker amd breakfast shoudl go to index -->
@@ -12,8 +10,8 @@
   <!-- Right Navigation -->
   <div class="navbar-bunker-right hidden-xs hidden-sm">
       <!-- Links when logged in -->
+      <%= link_to 'All Bunkers', bunkers_path, class: "navbar-bunker-item navbar-bunker-link" %>
       <%= link_to 'My Bunkers', mybunkers_path, class: "navbar-bunker-item navbar-bunker-link" %>
-
       <%= link_to "My trips", bookings_path, class: "navbar-bunker-item navbar-bunker-link" %>
 
       <!-- Avatar with dropdown menu -->
@@ -41,11 +39,14 @@
       </div>
     <% else %>
       <!-- Login link (when logged out) -->
-        <%= link_to 'Bunker & Breakfast', root_path, class: "navbar-bunker-item navbar-bunker-link" %>
+      <div class="navbar-left ">
+        <%= link_to "#{image_tag("bunker.png",  height: 50, alt: "bunker logo")} Bunkers & Breakfast".html_safe, root_path, :class=>"navbar-bunker-brand navbar-bunker-link" %>
+      </div>
       <div class="navbar-bunker-right hidden-xs hidden-sm">
-        <%= link_to 'My Bunkers',bookings_path, class: "navbar-bunker-item navbar-bunker-link" %>
-        <%= link_to "My Trips", bookings_path, class: "navbar-bunker-item navbar-bunker-link" %>
+        <%= link_to 'All Bunkers',bunkers_path, class: "navbar-bunker-item navbar-bunker-link" %>
         <%= link_to t(".sign_in", default: "Sign In"), new_user_session_path, class: "navbar-bunker-item navbar-bunker-link" %>
+        <%= link_to t(".sign_up", default: "Sign Up"), new_user_registration_path, class: "navbar-bunker-item navbar-bunker-link" %>
+        
       <% end %>
       </div>
   </div>
