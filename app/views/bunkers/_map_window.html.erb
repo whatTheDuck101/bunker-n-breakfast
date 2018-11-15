@@ -1,5 +1,5 @@
 <div>
 <p>Name: <%= bunker.name %></p>
 <p>Owner: <%= bunker.user.first_name %> <%= bunker.user.last_name %></p>
-<!-- <p><%= cl_image_path bunker.photo %></p> -->
+<p><%= cl_image_tag bunker.photo, style:"width:180px" %></p>
 </div>
