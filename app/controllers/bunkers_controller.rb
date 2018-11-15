@@ -16,7 +16,7 @@ class BunkersController < ApplicationController
     if params[:max_price].present?
       @bunkers = @bunkers.in_price_max(params[:max_price])
     end
-    
+
     @bunkers_location = @bunkers.where.not(latitude: nil, longitude: nil)
     @markers = @bunkers_location.map do |bunker|
       {
@@ -46,7 +46,7 @@ class BunkersController < ApplicationController
     @bunker.user = current_user
     authorize(@bunker)
 
-    if @bunker.save!
+    if @bunker.save
       redirect_to bunkers_path
     else
       render :new
