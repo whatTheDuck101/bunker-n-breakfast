@@ -6,7 +6,7 @@ class BunkersController < ApplicationController
     @bunkers = policy_scope(Bunker)
 
     if params[:query_address].present?
-      @bunkers = Bunker.near(params[:query_address], 100)
+      @bunkers = Bunker.near(params[:query_address], 200)
     end
 
     if params[:min_price].present?
@@ -18,24 +18,19 @@ class BunkersController < ApplicationController
     end
 
     @bunkers_location = @bunkers.where.not(latitude: nil, longitude: nil)
-    @markers = @bunkers_location.map do |bunker|
-      {
-        lng: bunker.longitude,
-        lat: bunker.latitude,
-        infoWindow: { content: render_to_string(partial: "/bunkers/map_window", locals: { bunker: bunker })}
-      }
-    end
+    display_in_map
   end
 
   def show
+    @bunkers_location = []
+    @bunkers_location << @bunker
+    display_in_map
   end
 
   def my_bunkers
-
     @bunkers = current_user.bunkers
     @bookings = current_user.bookings
     authorize(@bunkers)
-
   end
 
   def new
@@ -64,5 +59,15 @@ class BunkersController < ApplicationController
 
   def bunker_params
     params.require(:bunker).permit(:name, :address, :description, :photo, :is_available, :price)
+  end
+
+  def display_in_map
+    @markers = @bunkers_location.map do |bunker|
+      {
+        lng: bunker.longitude,
+        lat: bunker.latitude,
+        infoWindow: { content: render_to_string(partial: "/bunkers/map_window", locals: { bunker: bunker })}
+      }
+    end
   end
 end
