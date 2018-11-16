@@ -15,10 +15,14 @@
 }
 
 .bg-half {
-  height: 30vh;
+  top: 15px;
+  height: 60vh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  h1 {
+    padding-top: 30vh;
+  }
 }
 
 .center {
@@ -54,12 +58,12 @@
   background-size: cover;
 }
 
-// .flat-card-content {
-//   line-height: 1.5em;
-//   height: 100px;
-//   padding: 10px;
-//   background-color: #f8f9fa;
-// }
+.flat-card-content {
+  line-height: 1.5em;
+  height: 100px;
+  padding: 10px;
+  background-color: #f8f9fa;
+}
 
 .flat-card-actions {
   position: relative;
@@ -151,6 +155,10 @@
   padding-left: 20px;
   font-size: 20px;
   font-weight: bold;
+  .btn.btn-danger {
+    margin: 0;
+    padding: 4% 0;
+  }
 }
 .status {
   color: #04a366;
