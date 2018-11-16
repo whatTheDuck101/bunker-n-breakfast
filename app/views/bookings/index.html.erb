@@ -32,11 +32,12 @@
                 Pending </div>
               <% elsif booking.status == "accepted" %>
                <div class="accepted">
-               <h1><i class="fas fa-smile"></i></h1>
+               <h1><i class="fas fa-check-circle"></i></h1>
+
                Accepted </div>
               <% else %>
                <div class="rejected">
-               <i class="fas fa-frown-open"></i>
+               <h1><i class="fas fa-frown-open"></i></h1>
                Rejected </div>
               <% end %>
             </div>
