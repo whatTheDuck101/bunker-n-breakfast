@@ -5,6 +5,18 @@
   background-size: cover !important;
   display: flex;
   align-items: center;
+  position:relative;
+}
+
+.banner-form {
+  position:absolute;
+  left: 7%;
+  color: lightgrey;
+
+}
+
+#query-placeholder {
+  color: lightgrey;
 }
 
 .banner-content {
