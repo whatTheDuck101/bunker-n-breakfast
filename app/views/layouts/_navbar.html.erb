@@ -17,6 +17,7 @@
       <!-- Avatar with dropdown menu -->
       <div class="navbar-bunker-item">
         <div class="dropdown">
+
           <% if current_user.photo.file.nil? %>
           <%= image_tag "userprofile.png", class: "avatar dropdown-toggle", id: "navbar-bunker-menu", "data-toggle" => "dropdown" %>
           <% else %>

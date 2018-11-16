@@ -25,7 +25,9 @@
               <% else %>
                <p> Sorry, your request was denied from "<%= booking.bunker.user.first_name %>". </p>
               <% end %>
+
             </div>
+
             <div class="message-status">
               <% if booking.status == "pending" %>
                <div class="pending">
@@ -41,7 +43,9 @@
                <h1><i class="fas fa-frown-open"></i></h1>
                Rejected </div>
               <% end %>
+
             </div>
+
           </div>
         </div>
        <% end %>
