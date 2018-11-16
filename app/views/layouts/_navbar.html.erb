@@ -1,4 +1,4 @@
-<div class="navbar-bunker">
+<div class="navbar-bunker navbar-fixed-top">
   <!-- Logo -->
   <% if user_signed_in? %>
     <%= link_to "#{image_tag("bunker.png",  height: 50, alt: "bunker logo")} Bunkers & Breakfast".html_safe, bunkers_path, :class=>"navbar-bunker-brand navbar-bunker-link" %>

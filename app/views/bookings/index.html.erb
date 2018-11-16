@@ -4,25 +4,25 @@
   </div>
 </div>
 
-    <div class="wrapper-dark-gray padded">
-       <div class="container">
-       <% @user_bookings.each do |booking| %>
-          <div class="message">
-            <!-- <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan"> -->
-            <div class="message-name">
-              <p><%= booking.bunker.name %></p>
-                 <!-- <p><%= current_user.email.split("@")[0] %></p> -->
-            </div>
-            <div class="message-body">
-              <p><em>sent a request to "<%= booking.bunker.user.first_name %>" </em> </p>
-            </div>
-            <div class="message-status">
-              <p class="status"><strong><%= booking.status %></strong></p>
-            </div>
-          </div>
-       <% end %>
-     </div>
-    </div>
+<div class="wrapper-dark-gray padded">
+    <div class="container">
+    <% @user_bookings.each do |booking| %>
+      <div class="message">
+        <!-- <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan"> -->
+        <div class="message-name">
+          <p><%= booking.bunker.name %></p>
+              <!-- <p><%= current_user.email.split("@")[0] %></p> -->
+        </div>
+        <div class="message-body">
+          <p><em>sent a request to "<%= booking.bunker.user.first_name %>" </em> </p>
+        </div>
+        <div class="message-status">
+          <p class="status"><strong><%= booking.status %></strong></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
 
      <div class="wrapper-darkmint padded">
        <div class="container">
