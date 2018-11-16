@@ -151,6 +151,10 @@
   padding-left: 20px;
   font-size: 20px;
   font-weight: bold;
+  .btn.btn-danger {
+    margin: 0;
+    padding: 4% 0;
+  }
 }
 .status {
   color: #04a366;
