@@ -18,13 +18,13 @@
       </div>
 
 
-      <div class="container padded">
+      <div class="container">
         <div id="container-bunker"> 
-          <strong><h2>My Bunkers</h2></strong>
+          <h2><strong>My Bunkers</strong></h2>
           <div class="row">
             <% @bunkers.each do |bunker| %>
               <div class="col-xs-4">
-                <div class="card padded">
+                <div class="card">
                     <div class="card-body">
                     <div class="flat-card-image" style="background-image: url(<%= cl_image_path bunker.photo%>)"></div>
                     <h5 class="card-title"><strong><%= bunker.name %></strong></h5>
@@ -45,6 +45,8 @@
             </div>
           </div>
         </div>
+      
+      <div> <br> </div>
 
       <div class="wrapper-beige  padded">
         <div class="container">
