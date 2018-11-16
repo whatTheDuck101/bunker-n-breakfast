@@ -49,43 +49,42 @@
 
     <div class="wrapper-beige">
       <div class="container">
-            <h2>Requests</h2>
-            <% if current_user.owned_bunkers_bookings.count == 0%>
-              <p>You don't have any requests</p>
-            <% else %>
+        <h2>Requests</h2>
+        <% if current_user.owned_bunkers_bookings.count == 0%>
+          <p>You don't have any requests</p>
+        <% else %>
 
-              <div class="container">
-                <% current_user.owned_bunkers_bookings.each do |booking| %>
-                  <% if booking.status == "pending"%>
-                    <div class="message">
-                      <div class="message-name">
-                        <p><%= booking.bunker.name %></p>
-                      </div>
-                      <div class="message-body">
-                        <p><em>Please confirm reservation from <%= booking.user.first_name %></em> </p>
 
-                      </div>
+          <div class="container">
+            <% current_user.owned_bunkers_bookings.each do |booking| %>
+              <% if booking.status == "pending"%>
+                <div class="message">
+                  <div class="message-name">
+                    <p><%= booking.bunker.name %></p>
+                  </div>
+                   <div class="message-body">
+                    <p><em>Please confirm reservation from <%= booking.user.first_name %></em> </p>
 
-                      <%= cl_image_tag booking.user.photo, class: "card-user" %>
+                   </div>
 
-                        <div class="message-status">
-                            <%= link_to "Accept", bunker_booking_path(booking.bunker.id, booking.id, { value: "accepted" }), class: 'btn btn-success', method: :patch %>
-                            <%= link_to "Refuse", bunker_booking_path(booking.bunker.id, booking.id, { value: "denied" }), class: 'btn btn-danger', method: :patch %>
-                        </div>
-                      </div>
-                  <% elsif booking.status == "accepted" %>
-                      <div class="message">
-                      <div class="message-name">
-                        <p><%= booking.bunker.name %></p>
-                      </div>
-                      <div class="message-body">
-                        <p><em>Your confirmation is successfully done</em> </p>
-                      </div>
+                   <%= cl_image_tag booking.user.photo, class: "card-user" %>
 
-                      </div>
-                  <% elsif booking.status == "denied" %>
+                     <div class="message-status">
+                        <%= link_to "Accept", bunker_booking_path(booking.bunker.id, booking.id, { value: "accepted" }), class: 'btn btn-success', method: :patch %>
+                        <%= link_to "Refuse", bunker_booking_path(booking.bunker.id, booking.id, { value: "denied" }), class: 'btn btn-danger', method: :patch %>
+                     </div>
+                   </div>
+              <% elsif booking.status == "accepted" %>
+                  <div class="message">
+                  <div class="message-name">
+                    <p><%= booking.bunker.name %></p>
+                  </div>
+                   <div class="message-body">
+                    <p><em>Your confirmation is successfully done</em> </p>
+                   </div>
 
-                <% end %>
+                   </div>
+              <% elsif booking.status == "denied" %>
             <% end %>
               <% end %>
     </div>

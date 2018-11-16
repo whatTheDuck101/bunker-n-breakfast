@@ -19,12 +19,15 @@
               <% if booking.status == "pending" %>
                 <p><%= booking.created_at.strftime("%c") %></p>
                 <p><em>sent a request to "<%= booking.bunker.user.first_name %>" </em> </p>
+                <%= cl_image_tag booking.bunker.user.photo, class: "card-user" %>
               <% elsif booking.status == "accepted" %>
                <p> Now you are safe </p>
               <% else %>
                <p> Sorry, your request was denied from "<%= booking.bunker.user.first_name %>". </p>
               <% end %>
+
             </div>
+
             <div class="message-status">
               <% if booking.status == "pending" %>
                <div class="pending">
@@ -32,14 +35,17 @@
                 Pending </div>
               <% elsif booking.status == "accepted" %>
                <div class="accepted">
-               <h1><i class="fas fa-smile"></i></h1>
+               <h1><i class="fas fa-check-circle"></i></h1>
+
                Accepted </div>
               <% else %>
                <div class="rejected">
-               <i class="fas fa-frown-open"></i>
+               <h1><i class="fas fa-frown-open"></i></h1>
                Rejected </div>
               <% end %>
+
             </div>
+
           </div>
         </div>
        <% end %>
