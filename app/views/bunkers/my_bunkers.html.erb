@@ -85,7 +85,8 @@
                     <p><em>Please confirm reservation from <%= booking.user.first_name %></em> </p>
 
                    </div>
-                                   <%= cl_image_tag booking.bunker.user.photo, class: "card-user" %>
+
+                   <%= cl_image_tag booking.user.photo, class: "card-user" %>
 
                      <div class="message-status">
                         <%= link_to "Accept", bunker_booking_path(booking.bunker.id, booking.id, { value: "accepted" }), class: 'btn btn-success', method: :patch %>
