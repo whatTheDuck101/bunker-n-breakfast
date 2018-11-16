@@ -83,7 +83,10 @@
                   </div>
                    <div class="message-body">
                     <p><em>Please confirm reservation from <%= booking.user.first_name %></em> </p>
+
                    </div>
+                                   <%= cl_image_tag booking.bunker.user.photo, class: "card-user" %>
+
                      <div class="message-status">
                         <%= link_to "Accept", bunker_booking_path(booking.bunker.id, booking.id, { value: "accepted" }), class: 'btn btn-success', method: :patch %>
                         <%= link_to "Refuse", bunker_booking_path(booking.bunker.id, booking.id, { value: "denied" }), class: 'btn btn-danger', method: :patch %>
