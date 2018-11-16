@@ -19,6 +19,7 @@
               <% if booking.status == "pending" %>
                 <p><%= booking.created_at.strftime("%c") %></p>
                 <p><em>sent a request to "<%= booking.bunker.user.first_name %>" </em> </p>
+                <%= cl_image_tag booking.bunker.user.photo, class: "card-user" %>
               <% elsif booking.status == "accepted" %>
                <p> Now you are safe </p>
               <% else %>
