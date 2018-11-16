@@ -38,13 +38,18 @@
                    <i class="fas fa-map-marker-alt"></i>  <%= bunker.address %>
                  </div>
                  <div>
-                   <i class="fas fa-dollar-sign">   </i><%= number_with_delimiter(bunker.price, :delimiter => ',') %>
+                   <i class="fas fa-dollar-sign">   </i><%= bunker.price %>
                  </div>
                 </div>
 
-                <btn class="btn-success"> edit </btn>
-                <btn class="btn-success"> delete </btn>
-
+                <div class="buttons">
+                  <div class="left-button action">
+                    <btn class="btn-warning left-button"> edit </btn>
+                  </div>
+                  <div class="right-button action">
+                    <btn class="btn-warning "> delete </btn>
+                  </div>
+                </div>
 
             </div>
 
