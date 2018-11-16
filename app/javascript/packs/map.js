@@ -39,7 +39,7 @@ if (mapElement) {
     markers.forEach(marker => {
       bounds.extend([marker.lng, marker.lat]);
     });
-    map.fitBounds(bounds, { duration: 0, padding: 75 });
+    map.fitBounds(bounds, { duration: 0, padding: 270 });
   }
 
   // Add the geocoded search on the map
