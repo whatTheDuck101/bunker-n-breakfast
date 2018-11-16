@@ -15,11 +15,29 @@
               <div class="flat-card-image" style="background-image: url(<%= cl_image_path booking.bunker.photo%>)"></div>
             </div>
             <div class="message-body">
-              <p><%= booking.created_at %></p>
-              <p><em>sent a request to "<%= booking.bunker.user.first_name %>" </em> </p>
+              <% if booking.status == "pending" %>
+                <p><%= booking.created_at.strftime("%c") %></p>
+                <p><em>sent a request to "<%= booking.bunker.user.first_name %>" </em> </p>
+              <% elsif booking.status == "accepted" %>
+               <p> Now you are safe </p>
+              <% else %>
+               <p> Sorry, your request was denied from "<%= booking.bunker.user.first_name %>". </p>
+              <% end %>
             </div>
             <div class="message-status">
-              <p class="status"><strong><%= booking.status %></strong></p>
+              <% if booking.status == "pending" %>
+               <div class="pending">
+                <h1><i class="fas fa-spinner"></i></h1>
+                Pending </div>
+              <% elsif booking.status == "accepted" %>
+               <div class="accepted">
+               <h1><i class="fas fa-smile"></i></h1>
+               Accepted </div>
+              <% else %>
+               <div class="rejected">
+               <i class="fas fa-frown-open"></i>
+               Rejected </div>
+              <% end %>
             </div>
           </div>
         </div>
@@ -33,3 +51,5 @@
         </div>
        </div>
     </div>
+
+
