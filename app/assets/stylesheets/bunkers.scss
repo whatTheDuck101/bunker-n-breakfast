@@ -15,10 +15,14 @@
 }
 
 .bg-half {
-  height: 30vh;
+  top: 15px;
+  height: 60vh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  h1 {
+    padding-top: 30vh;
+  }
 }
 
 .center {
