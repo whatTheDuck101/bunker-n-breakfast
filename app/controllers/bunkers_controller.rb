@@ -31,9 +31,11 @@ class BunkersController < ApplicationController
   end
 
   def my_bunkers
+
     @bunkers = current_user.bunkers
     @bookings = current_user.bookings
     authorize(@bunkers)
+
   end
 
   def new

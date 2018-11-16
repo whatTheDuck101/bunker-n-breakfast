@@ -73,7 +73,8 @@
                    <p><%= bunker.name %></p>
                  </div>
                  <div class="message-body">
-                   <p><em>got a request from "<%= bunker.user.first_name %>" </em> </p>
+
+                   <p><em>got a request from <%= bunker.bookings.first.user.first_name %></em> </p>
                  </div>
                  <div class="message-status">
                     <%= link_to "Accept", bunker_booking_path(bunker.id, bunker.bookings.first.id, { value: "accepted" }), class: 'btn btn-success', method: :patch %>
