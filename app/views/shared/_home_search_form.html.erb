@@ -1,0 +1,8 @@
+<%= form_tag(bunkers_path, method: "get") do %>
+  <%= text_field_tag :query_address,
+    params[:query],
+    id: "home-query-box",
+    placeholder: "Search for bunkers address"
+    %>
+  <%= submit_tag("Search", class: "btn btn-danger") %>
+<% end %>

@@ -10,7 +10,7 @@ class BookingPolicy < ApplicationPolicy
     end
 
     def update?
-      user_is_logged_in?
+      true
     end
 
   private

@@ -26,7 +26,18 @@ class BookingsController < ApplicationController
   end
 
   def update
+    @booking = Booking.find(params["id"])
+    @booking.status = params["value"]
+    @booking.save!
+    @bunker = Bunker.find(params[:bunker_id])
 
+    if params["value"] == "accepted"
+
+    end
+
+    authorize(@booking)
+
+    redirect_to mybunkers_path
   end
 
   private
@@ -39,4 +50,5 @@ class BookingsController < ApplicationController
   # def booking_params
   #   params.require(:booking).permit(:status, :user_id, :bunker_id)
   # end
+
 end

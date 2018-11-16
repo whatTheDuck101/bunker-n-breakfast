@@ -5,14 +5,14 @@
         <h3> Address: <%= @bunker.address %></h3>
     </div>
   </div>
-
+  
   <div id="container-show">
     <div class="row equal-cols"> 
       <div class="col-xs-4"> 
         <div class="col-xs-12 content-show">
           <h2 class="title-show">Bunker Details</h2>
           <h3><%= @bunker.description %></h3>
-          <span><i class="fas fa-dollar-sign"></i> <%= @bunker.price %></span>
+          <span><i class="fas fa-dollar-sign"></i> <%= number_with_delimiter(@bunker.price, :delimiter => ',') %></span>
           <br>
           <span><i class="fas fa-users"> 1 spot left!</i></span>
           <div class="share">
@@ -40,7 +40,9 @@
 
           <h4>Till the end of the world...</h4>
           <br>
-          <%= link_to 'Request to book', bunker_bookings_path(@bunker.id), class: 'btn btn-danger btn-lg', method: :post %> 
+          <% if @bunker.is_available %>
+            <%= link_to 'Request to book', bunker_bookings_path(@bunker.id), class: 'btn btn-dander btn-lg', method: :post %>
+          <% end %>
         </div>
       </div>
     </div>

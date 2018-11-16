@@ -8,7 +8,10 @@ class Bunker < ApplicationRecord
   validates :address, presence: true
   validates :price, presence: true, numericality: { only_float: true }
   validates :description, presence: true
-  # validates :photo, presence: true
-  include PgSearch
-  multisearchable against: [ :address, :price ]
+  validates :photo, presence: true
+
+
+  scope :in_price_min, ->(min) { where("price >= ?", min) }
+  scope :in_price_max, ->(max) { where("price <= ?", max) }
+
 end

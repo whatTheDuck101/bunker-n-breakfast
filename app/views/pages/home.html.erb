@@ -2,75 +2,15 @@
     <div class="banner-content anim-typewriter">
         <h1>Bunkers & Breakfast</h1>
         <h2>Safety and Comfort is Our Priority</h2>
-        <a class="btn btn-primary btn-lg" data-toggle="modal" data-target="#exampleModal">Sign Up</a>
-        <a class="btn btn-primary btn-lg" data-toggle="modal" data-target="#exampleModal1">Sign In</a>
     </div>
+      <div class="banner-form"><%= render  "/shared/home_search_form" %></div>
 </div>
 
 
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-
-      <h2>Sign in</h2>
-      <%= simple_form_for(User.new, url: user_session_path ) do |f| %>
-        <div class="form-inputs">
-          <%= f.input :email,
-                      required: false,
-                      autofocus: true,
-                      input_html: { autocomplete: "email" } %>
-          <%= f.input :password,
-                      required: false,
-                      input_html: { autocomplete: "current-password" } %>
-        </div>
-
-        <div class="form-actions">
-          <%= f.button :submit, "Log in", :class => "btn-primary"  %>
-        </div>
-      <% end %>
-
-    </div>
-  </div>
-</div>
 
 
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <h2>Sign up</h2>
 
-      <%= simple_form_for(User.new, url: user_registration_path) do |f| %>
-        <%= f.error_notification %>
-
-        <div class="form-inputs">
-          <%= f.input :first_name,
-                      required: true
-                      %>
-          <%= f.input :last_name,
-                      required: true
-                      %>
-          <%= f.input :email,
-                      required: true,
-                      autofocus: true ,
-                      input_html: { autocomplete: "email" }%>
-          <%= f.input :password,
-                      required: true,
-                      hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                      input_html: { autocomplete: "new-password" } %>
-          <%= f.input :password_confirmation,
-                      required: true,
-                      input_html: { autocomplete: "new-password" } %>
-        </div>
-
-        <div class="form-actions">
-          <%= f.button :submit, "Sign up", :class => "btn-primary"   %>
-        </div>
-      <% end %>
-    </div>
-  </div>
-</div>
 
 
 

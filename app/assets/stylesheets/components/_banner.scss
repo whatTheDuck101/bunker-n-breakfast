@@ -5,6 +5,23 @@
   background-size: cover !important;
   display: flex;
   align-items: center;
+  position:relative;
+}
+
+.banner-form {
+  position:absolute;
+  left: 7%;
+  color: #ACA9A9;
+  top: 39%;
+}
+
+#home-query-box {
+width: 400px;
+color: black;
+}
+
+#query-placeholder {
+  color: lightgrey;
 }
 
 .banner-content {
