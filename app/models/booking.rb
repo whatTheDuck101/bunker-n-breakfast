@@ -1,4 +1,3 @@
-
 STATUS = ["pending", "accepted", "denied"]
 
 class Booking < ApplicationRecord

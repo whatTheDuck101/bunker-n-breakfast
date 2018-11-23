@@ -1,9 +1,9 @@
 /* Main navbar */
 .navbar-bunker {
   box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.07), 0 1px 0 0 rgba(0, 0, 0, 0.03);
-  background: white;
+  background: $first;
   transition: all 0.3s ease;
-  height: 70px;
+  height: 50px;
   padding: 0px 30px;
   display: flex;
   align-items: center;
@@ -37,7 +37,7 @@
 
 /* Navbar link */
 .navbar-bunker-link {
-  color: #616668;
+  color: $white;
   font-size: 14px;
 }
 .navbar-bunker-link:hover {
@@ -48,8 +48,8 @@
 /* Dropdown menu */
 .navbar-bunker-dropdown-menu {
   margin-top: 15px;
-  box-shadow: 1px 1px 4px #e6e6e6;
-  border-color: #e6e6e6;
+  box-shadow: 1px 1px 4px $white;
+  border-color: $white;
 }
 .navbar-bunker-dropdown-menu li > a {
   transition: color 0.3s ease;
@@ -72,6 +72,6 @@
   top: -6px;
   background-color: white;
   transform: rotate(45deg);
-  border-left: 1px solid #e6e6e6;
-  border-top: 1px solid #e6e6e6;
+  border-left: 1px solid $white;
+  border-top: 1px solid $white;
 }
