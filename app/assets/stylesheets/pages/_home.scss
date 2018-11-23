@@ -1,1 +1,24 @@
 // Specific CSS for your home-page
+.search-home {
+  background: $third;
+  color: $white;
+  position: relative;
+  :hover {
+    columns: $first;
+  }
+}
+
+#home-query-box {
+  font-size: 16px;
+  padding: 5.5px 11px;
+  margin-bottom: 0;
+  color: $first;
+  border-radius: 10px;
+  border: 1px #000 solid;
+  padding: 5px 5px 5px 25px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  z-index: 5;
+}

@@ -41,7 +41,7 @@
   font-size: 14px;
 }
 .navbar-bunker-link:hover {
-  color: $brand-primary;
+  color: $third;
   text-decoration: none;
 }
 
@@ -70,7 +70,7 @@
   position: absolute;
   right: 10px;
   top: -6px;
-  background-color: white;
+  background-color: $white;
   transform: rotate(45deg);
   border-left: 1px solid $white;
   border-top: 1px solid $white;

@@ -1,23 +1,23 @@
 .banner {
-  color: white;
+  color: $white;
   height: 100vh;
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
   background-size: cover !important;
   display: flex;
   align-items: center;
-  position:relative;
+  position: relative;
 }
 
 .banner-form {
-  position:absolute;
+  position: absolute;
   left: 7%;
-  color: #ACA9A9;
+  color: $white;
   top: 39%;
 }
 
 #home-query-box {
-width: 400px;
-color: black;
+  width: 400px;
+  color: black;
 }
 
 #query-placeholder {
@@ -32,6 +32,7 @@ color: black;
 
   h1 {
     font-style: "Bangers";
+    color: $white;
     font-size: 50px;
     font-weight: bold;
     text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
@@ -39,19 +40,14 @@ color: black;
   h2 {
     font-size: 29px;
     font-weight: bold;
-    color: rgb(255, 255, 255);
-    opacity: 0.9;
+    color: $white;
     margin-bottom: 30px;
     overflow: hidden; /* Ensures the content is not revealed until the animation */
-    border-right: 0.15em solid orange; /* The typwriter cursor */
+    border-right: 0.15em solid $third; /* The typwriter cursor */
     white-space: nowrap; /* Keeps the content on a single line */
     margin: 0 0; /* Gives that scrolling effect as the typing happens */
     letter-spacing: 0em; /* Adjust as needed */
-    animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end 7;
-  }
-
-  .btn {
-    margin: 5% 7% 0 0;
+    animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
   }
 }
 
@@ -72,12 +68,12 @@ color: black;
     border-color: transparent;
   }
   50% {
-    border-color: orange;
+    border-color: $third;
   }
 }
 
 .banner-md {
-  color: white;
+  color: $white;
   height: 60vh;
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
   background-size: cover !important;
