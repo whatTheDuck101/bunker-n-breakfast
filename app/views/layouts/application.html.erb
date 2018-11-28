@@ -13,8 +13,9 @@
     <%= favicon_link_tag("bunker.png") %>
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
+    <%= render "shared/navbar" %>
+
   <body style="background: #5d737e;">
-    <%= render "layouts/navbar" %>
     <%= render 'shared/flashes' %>
     <%= yield %>
     <%= javascript_include_tag 'application' %>
