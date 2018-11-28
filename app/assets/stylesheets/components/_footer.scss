@@ -1,4 +1,29 @@
 .footer {
   background: $first;
-  height: 200px;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-top: 10px;
+}
+
+.awknowledgement {
+  color: $white;
+  font-size: 11px;
+  text-align: center;
+  a {
+    text-decoration: none;
+    color: $white;
+  }
+  a:hover {
+    text-decoration: column;
+  }
+}
+.external-links {
+  text-align: center;
+  i {
+    padding: 5px 5px;
+    color: $white;
+    font-size: 30px;
+  }
 }
