@@ -1,6 +1,6 @@
 .footer {
   background: $first;
-  height: 120px;
+  min-height: 120px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -8,6 +8,7 @@
 }
 
 .awknowledgement {
+  padding-top: 20px;
   color: $white;
   font-size: 11px;
   text-align: center;
@@ -21,10 +22,13 @@
 }
 .external-links {
   text-align: center;
-  padding-bottom: 30px;
+  padding: 15px 0;
   i {
     padding: 5px 5px;
     color: $white;
     font-size: 30px;
+  }
+  i:hover {
+    color: $third;
   }
 }
