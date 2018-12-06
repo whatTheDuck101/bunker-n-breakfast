@@ -1,14 +1,14 @@
 .banner-home {
   color: $white;
-  height: 100vh;
+  height: calc(95vh - 55px);
   background-size: cover;
   background-position: center;
 }
 
 .banner-home-content {
   position: fixed;
-  left: 10%;
-  top: 15%;
+  left: 13%;
+  top: 25%;
   color: $white;
   h2 {
     font-size: 29px;

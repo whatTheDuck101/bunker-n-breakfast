@@ -1,0 +1,13 @@
+.banner-md {
+  color: $white;
+  height: calc(80vh - 55px);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+}
+
+.content-md {
+  padding-left: 7%;
+  padding-top: 19%;
+}
