@@ -1,13 +1,26 @@
-.banner-md {
+.banner-index-content {
+  position: relative;
+  background-color: $first;
   color: $white;
-  height: calc(80vh - 55px);
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
+  padding: 5% 0 2% 6%;
+  h5,
+  h6 {
+    padding-bottom: 25px;
+  }
 }
 
-.content-md {
-  padding-left: 7%;
-  padding-top: 19%;
+.container-map-cards {
+  position: relative;
+  min-height: 100vh;
+}
+.map-container {
+  width: 33%;
+  z-index: -1;
+}
+.cards-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 67%;
+  z-index: -1;
 }

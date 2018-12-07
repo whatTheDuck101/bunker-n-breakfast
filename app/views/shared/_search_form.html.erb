@@ -1,11 +1,9 @@
 <%= form_tag(bunkers_path, method: "get") do %>
-  <%= label_tag( "Search for location:") %>
+  <%= label_tag( "Search for City:") %>
   <%= text_field_tag(:query_address) %>
-  <%= label_tag( "Min price:") %>
+  <%= label_tag( "Min Price:") %>
   <%= text_field_tag(:min_price) %>
-  <%= label_tag( "Max price:") %>
+  <%= label_tag( "Max Price:") %>
   <%= text_field_tag(:max_price) %>
-
   <%= submit_tag("Search", class: "btn btn-danger") %>
-
 <% end %>
