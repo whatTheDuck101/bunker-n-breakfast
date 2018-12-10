@@ -5,12 +5,11 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  padding-top: 10px;
+  padding: 30px 0;
   z-index: 200;
 }
 
 .awknowledgement {
-  padding-top: 20px;
   color: $white;
   font-size: 11px;
   text-align: center;
