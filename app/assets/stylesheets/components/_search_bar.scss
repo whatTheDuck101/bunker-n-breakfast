@@ -21,6 +21,14 @@
   }
 }
 
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: $first;
+}
+
 .btn-danger {
   padding: 2px 12px;
   margin-bottom: 3.5px;

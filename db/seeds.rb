@@ -129,7 +129,7 @@ Bunker.create(
   user: eliz, 
   name: "Warm Bunker",
   address: "Norilsk, Krasnoyarsk Krai, Russia",
-  price: 102938474.0,
+  price: 12938474.0,
   description: "Cold isolated climate but the bunker is warm. Hidden, worth the cost.",
   latitude: 69.354956,
   longitude: 88.246805,

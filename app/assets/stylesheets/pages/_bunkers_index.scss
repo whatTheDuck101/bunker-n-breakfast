@@ -1,26 +1,33 @@
-.banner-index-content {
+.index-container {
   position: relative;
+}
+.banner-index-content {
   background-color: $first;
   color: $white;
-  padding: 5% 0 2% 6%;
+  padding: 6% 0 2% 4%;
   h5,
   h6 {
     padding-bottom: 25px;
   }
 }
-
 .container-map-cards {
-  position: relative;
-  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 33% 67%;
+  grid-row: 1;
+  background: $white;
 }
 .map-container {
-  width: 33%;
-  z-index: -1;
+  padding: 15px 0px;
+  canvas.mapboxgl-canvas {
+    grid-column: 1 / 1;
+    grid-row: 1 / 1;
+    width: 100%;
+  }
 }
 .cards-container {
-  position: absolute;
-  top: 0;
+  grid-column: 2 / 2;
+  grid-row: 1 / 1;
+  padding: 10px 10px;
+  top: 5px;
   right: 0;
-  width: 67%;
-  z-index: -1;
 }
