@@ -1,23 +1,23 @@
 .banner-home {
   color: $white;
-  height: 100vh;
+  height: calc(105vh - 55px);
   background-size: cover;
   background-position: center;
 }
 
 .banner-home-content {
   position: fixed;
-  left: 10%;
-  top: 15%;
+  left: 13%;
+  top: 20%;
   color: $white;
-  h2 {
-    font-size: 29px;
-    font-weight: bold;
-    margin-bottom: 30px;
+  h3 {
+    font-weight: 550;
+  }
+  h5 {
     overflow: hidden; /* Ensures the content is not revealed until the animation */
     border-right: 0.15em solid $third; /* The typwriter cursor */
     white-space: nowrap; /* Keeps the content on a single line */
-    margin: 0 0; /* Gives that scrolling effect as the typing happens */
+    margin: 15px 0; /* Gives that scrolling effect as the typing happens */
     letter-spacing: 0em; /* Adjust as needed */
     animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
   }
@@ -29,7 +29,7 @@
 
 #home-query-box {
   padding: 24px;
-  margin-top: 25px;
+  margin-top: 10px;
   height: 100%;
   width: 400px;
 

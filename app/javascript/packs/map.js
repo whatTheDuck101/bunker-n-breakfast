@@ -41,11 +41,4 @@ if (mapElement) {
     });
     map.fitBounds(bounds, { duration: 0, padding: 270 });
   }
-
-  // Add the geocoded search on the map
-  //   map.addControl(
-  //     new MapboxGeocoder({
-  //       accessToken: mapboxgl.accessToken
-  //     })
-  //   );
 }
