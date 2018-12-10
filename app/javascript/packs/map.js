@@ -32,7 +32,7 @@ if (mapElement) {
   if (markers.length === 0) {
     map.setZoom(1);
   } else if (markers.length === 1) {
-    map.setZoom(14);
+    map.setZoom(8);
     map.setCenter([markers[0].lng, markers[0].lat]);
   } else {
     const bounds = new mapboxgl.LngLatBounds();
