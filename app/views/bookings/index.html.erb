@@ -1,61 +1,47 @@
-<div class="bookings-banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= image_path 'endoftheworld1.jpg'%>)">
-   <h1 style="color: #FFFFFF">My Booking List <i class="fas fa-bed"></i> </h1>
-</div>
+<div class="index">
+  <div class="bookings-banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), 
+    url(<%= image_path 'endoftheworld1.jpg'%>)">
+    <h1>My Booked <%= "Trip".pluralize(@user_bookings.count)%> <i class="fas fa-bed"></i></h1>
+  </div>
 
-
-    <div class="wrapper-dark-gray padded">
-       <div class="container">
-       <% @user_bookings.each do |booking| %>
-         <div col-sm-off-set-4 col-sm-4>
-          <div class="message">
-            <!-- <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan"> -->
-            <div class="message-name">
-              <p><%= booking.bunker.name %></p>
-              <div class="flat-card-image" style="background-image: url(<%= cl_image_path booking.bunker.photo%>)"></div>
+  <div class="index-card">
+    <div class="row">
+      <% @user_bookings.each do |booking| %>
+        <div class="col-xs-12 col-sm-6" >
+          <div class="bookings-card">
+            <div class="bookings-card-image" style="background-image: url('<%= cl_image_path booking.bunker.photo %>');"></div>
+            <div class="bookings-card-body">
+              <div class="bookings-card-header">
+                <div class="bookings-card-user" style="background-image: url('<%= cl_image_path booking.bunker.user.photo %>')"></div>  
+                <p>sent a request to <em><%= booking.bunker.user.first_name %></em></p>
+              </div>
+              <div class="index-line"></div>
+              <div class="bookings-card-name"><h6><%= booking.bunker.name %></h6></div>
+              <div class="bookings-card-status">
+                <% if booking.status == "pending" %>
+                  <p><%= booking.created_at.strftime("%c") %></p>
+                  <div class="pending">
+                    <h1><i class="fas fa-spinner"></i></h1>
+                    Pending 
+                  </div>
+                <% elsif booking.status == "accepted" %>
+                  <p> Now you are safe </p>
+                  <div class="accepted">
+                    <h1><i class="fas fa-check-circle"></i></h1>
+                    Accepted 
+                  </div>
+                <% else %>
+                  <div class="rejected">
+                    <p> Sorry, your request was denied. </p>
+                    <h1><i class="fas fa-frown-open"></i></h1>
+                      Rejected 
+                  </div>
+                <% end %>
+              </div>
             </div>
-            <div class="message-body">
-              <% if booking.status == "pending" %>
-                <p><%= booking.created_at.strftime("%c") %></p>
-                <p><em>sent a request to "<%= booking.bunker.user.first_name %>" </em> </p>
-                <%= cl_image_tag booking.bunker.user.photo, class: "card-user" %>
-              <% elsif booking.status == "accepted" %>
-               <p> Now you are safe </p>
-              <% else %>
-               <p> Sorry, your request was denied from "<%= booking.bunker.user.first_name %>". </p>
-              <% end %>
-
-            </div>
-
-            <div class="message-status">
-              <% if booking.status == "pending" %>
-               <div class="pending">
-                <h1><i class="fas fa-spinner"></i></h1>
-                Pending </div>
-              <% elsif booking.status == "accepted" %>
-               <div class="accepted">
-               <h1><i class="fas fa-check-circle"></i></h1>
-
-               Accepted </div>
-              <% else %>
-               <div class="rejected">
-               <h1><i class="fas fa-frown-open"></i></h1>
-               Rejected </div>
-              <% end %>
-
-            </div>
-
           </div>
         </div>
-       <% end %>
-     </div>
+      <% end %>
     </div>
-
-
-     <div class="wrapper-darkmint padded">
-       <div class="container">
-        <div class="row">
-        </div>
-       </div>
-    </div>
-
-
+  </div>
+</div>
