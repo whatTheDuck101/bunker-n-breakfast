@@ -1,17 +1,14 @@
-// .btn_submit {
-//   border: 2px solid #4CAF50;
-//   -webkit-transition-duration: 0.4s;
-//   transition-duration: 0.4s;
-//   text-align: center;
-//   align-items: center;
-// }
-
-// .btn_submit:hover {
-//   background-color: #4CAF50;
-//   color: white;
-// }
-
-// .action {
-//   display: inline;
-
-// }
+.registration-button {
+  padding: 0.5em 1em;
+  margin-bottom: 10px;
+  background-color: $white;
+  border: 2px solid $third;
+  border-radius: 5px;
+  color: $third;
+  font-weight: 800;
+  &:hover {
+    background-color: $third;
+    border: 2px solid $third;
+    color: $white;
+  }
+}
