@@ -30,9 +30,6 @@
   p {
     padding: 5px 0 0 5px;
   }
-  em {
-    // color: $third;
-  }
 }
 .bookings-card-user {
   height: 40px;
@@ -44,9 +41,36 @@
 .index-line {
   height: 5px;
   width: 100%;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   background: $third;
   border-radius: 2px;
 }
 .bookings-card-name {
+  padding-bottom: 10px;
+}
+
+.bookings-card-status {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  flex-shrink: 1;
+  flex-grow: 1;
+  align-items: center;
+  p {
+    padding: 10px 0;
+    color: $third;
+  }
+}
+.pending {
+  padding: 10px 0;
+  color: $orange;
+}
+
+.accepted {
+  padding: 10px 0;
+  color: $green;
+}
+.rejected {
+  padding: 10px 0;
+  color: $red;
 }
