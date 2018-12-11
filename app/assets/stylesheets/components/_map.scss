@@ -4,5 +4,20 @@
 
 .mapboxgl-popup-content {
   text-align: center;
+  padding: 4px 4px 1px 4px !important;
   font-family: ‘Open Sans’, sans-serif;
+}
+.map-window {
+  p {
+    font-family: "Sintony", "sans-serif";
+    font-size: 10px;
+    margin: 0;
+    color: $first;
+  }
+}
+.bunker-image {
+  width: 128px;
+  height: 80px;
+  background-position: center;
+  background-size: cover;
 }

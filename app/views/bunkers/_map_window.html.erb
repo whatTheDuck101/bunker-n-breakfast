@@ -1,5 +1,5 @@
-<div>
-<p>Name: <%= bunker.name %></p>
-<p>Owner: <%= bunker.user.first_name %> <%= bunker.user.last_name %></p>
-<p><%= cl_image_tag bunker.photo, style:"width:180px" %></p>
+<div class="map-window">
+  <div class="bunker-image" style="background-image: url('<%= cl_image_path bunker.photo %>')"></div></p>
+  <p>Title: <%= bunker.name %></p>
+  <p>Owner: <%= bunker.user.first_name %></p>
 </div>
