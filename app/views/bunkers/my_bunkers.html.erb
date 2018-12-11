@@ -18,67 +18,75 @@
 
   <div id="container-bunker">
     <h2>My <%= "Bunker".pluralize(@bunkers.count)%></h2>
-    <div class="row">
-      <% @bunkers.each do |bunker| %>
-        <div class="col-xs-12 col-sm-6 col-md-4">
-          <div class="card">
-            <div class="card-img-top" style="background-image: url(<%= cl_image_path bunker.photo%>)"></div>
-            <div class="card-body">
-              <h6 class="card-title"><%= bunker.name %></h6>
-              <p class="card-text">
-                <span><i class="fas fa-map-marker-alt"></i> <%= bunker.address %></span>
-              </p>
-              <p class="card-text">
-                <span><i class="fas fa-dollar-sign"></i> <%= number_with_delimiter(bunker.price, :delimiter => ',') %> </span>
-              </p>
-              <div class="card-footer">
-                  <a href="#" class=""> Edit </a>
-                  <a href="#" class=""> Delete </a>
+    <% if current_user.owned_bunkers_bookings.count == 0%>
+      <%= link_to 'Add a New Bunker', new_bunker_path %>
+    <% else %>
+      <div class="row">
+        <% @bunkers.each do |bunker| %>
+          <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="card">
+              <div class="card-img-top" style="background-image: url(<%= cl_image_path bunker.photo%>)"></div>
+              <div class="card-body">
+                <h6 class="card-title"><%= bunker.name %></h6>
+                <p class="card-text">
+                  <span><i class="fas fa-map-marker-alt"></i> <%= bunker.address %></span>
+                </p>
+                <p class="card-text">
+                  <span><i class="fas fa-dollar-sign"></i> <%= number_with_delimiter(bunker.price, :delimiter => ',') %> </span>
+                </p>
+                <div class="card-footer">
+                    <a href="#" class=""> Edit </a>
+                    <a href="#" class=""> Delete </a>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      <% end %>
-    </div>
+        <% end %>
+      </div>
+    <% end %>
   </div>
 
-  <div class="">
-    <h2><%= "Request".pluralize(current_user.owned_bunkers_bookings.count)%></h2>
-    <% if current_user.owned_bunkers_bookings.count == 0%>
-      <p>You don't have any requests</p>
-    <% else %>
-      <% current_user.owned_bunkers_bookings.each do |booking| %>
-        <% if booking.status == "pending"%>
-          <div class="message">
-            <div class="message-name">
-              <p><%= booking.bunker.name %></p>
+  <div class="index-card">
+    <div class="row">
+      <h2><%= "Request".pluralize(current_user.owned_bunkers_bookings.count)%></h2>
+      <% if current_user.owned_bunkers_bookings.count == 0%>
+        <p>No requests</p>
+      <% else %>
+        <% current_user.owned_bunkers_bookings.each do |booking| %>
+          <div class="col-xs-12 col-sm-6" >
+            <div class="bookings-card">
+              <div class="bookings-card-image" style="background-image: url('<%= cl_image_path booking.bunker.photo %>');"></div>
+              <div class="bookings-card-header">
+                <div class="bookings-card-user" style="background-image: url('<%= cl_image_path booking.user.photo %>')"></div>  
+                <p>Please confirm reservation from <em><%= booking.user.first_name %></em></p>
+              </div>
+              <div class="index-line"></div>
+              <div class="bookings-card-name"><h6><%= booking.bunker.name %></h6></div>
+              <div class="bookings-card-status">
+                <% if booking.status == "pending"%>
+                  <div class="message-status">
+                    <%= link_to "Accept", bunker_booking_path(booking.bunker.id, booking.id, { value: "accepted" }), class: 'btn btn-success', method: :patch %>
+                    <%= link_to "Refuse", bunker_booking_path(booking.bunker.id, booking.id, { value: "denied" }), class: 'btn btn-danger', method: :patch %>
+                  </div>
+                     
+                  <% elsif booking.status == "accepted" %>
+                      <div class="message">
+                      <div class="message-name">
+                        <p style="color: black"><%= booking.bunker.name %></p>
+                      </div>
+                        <div class="message-body">
+                        <p style="color: #32B796"><em>Your confirmation is successfully done</em> </p>
+                        </div>
+
+                        </div>
+                  <% elsif booking.status == "denied" %>
+                  <% end %>
+              </div>
             </div>
-              <div class="message-body">
-              <p><em>Please confirm reservation from <%= booking.user.first_name %></em> </p>
-
-              </div>
-
-              <%= cl_image_tag booking.user.photo, class: "card-user" %>
-
-                <div class="message-status">
-                  <%= link_to "Accept", bunker_booking_path(booking.bunker.id, booking.id, { value: "accepted" }), class: 'btn btn-success', method: :patch %>
-                  <%= link_to "Refuse", bunker_booking_path(booking.bunker.id, booking.id, { value: "denied" }), class: 'btn btn-danger', method: :patch %>
-                </div>
-              </div>
-        <% elsif booking.status == "accepted" %>
-            <div class="message">
-            <div class="message-name">
-              <p style="color: black"><%= booking.bunker.name %></p>
-            </div>
-              <div class="message-body">
-              <p style="color: #32B796"><em>Your confirmation is successfully done</em> </p>
-              </div>
-
-              </div>
-        <% elsif booking.status == "denied" %>
+          </div>
+        <% end %>
       <% end %>
-        <% end %>
-        <% end %>
+    </div>
   </div>
 </div>
 
