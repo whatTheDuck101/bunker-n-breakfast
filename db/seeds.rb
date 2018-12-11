@@ -160,7 +160,7 @@ Bunker.create(
   name: "Spiral Bunker",
   address: "Sunshine Coast B, British Columbia, Canada ",
   price: 9933362.0, 
-  description: "Aesthetic exterior, with an even betetr interior.",
+  description: "Aesthetic exterior, with an even better interior.",
   latitude: 49.907124,
   longitude: -123.481600,
   photo: File.open(Rails.root.join("app", "assets", "images", "bunker12.jpg"))

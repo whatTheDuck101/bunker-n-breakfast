@@ -1,0 +1,16 @@
+.index {
+  background-color: $first;
+}
+.bookings-banner {
+  height: 70vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  h1 {
+    padding: 15% 10%;
+    color: $white;
+  }
+}
+.index-card {
+  padding: 15px 30px;
+}
