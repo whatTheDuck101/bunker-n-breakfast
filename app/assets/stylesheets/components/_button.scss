@@ -10,5 +10,20 @@
     background-color: $third;
     border: 2px solid $third;
     color: $white;
+    text-decoration: none;
+  }
+}
+
+.request-button {
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  background-color: $third;
+  color: $white;
+  font-weight: 800;
+  text-decoration: none;
+  &:hover {
+    background-color: $white;
+    color: $third;
+    text-decoration: none;
   }
 }

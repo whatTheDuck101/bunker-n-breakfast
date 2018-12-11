@@ -1,16 +1,11 @@
 window.onscroll = function() {
-  titleCard();
-};
-window.onscroll = function() {
   nav();
-};
-window.onscroll = function() {
+  titleCard();
   newBunker();
 };
 
 // title show
 var titleCard = document.querySelector(".title-card");
-
 var sticky = titleCard.offsetTop;
 
 function titleCard() {
@@ -23,7 +18,6 @@ function titleCard() {
 
 // navbar
 var nav = document.querySelector(".navbar-bunker");
-
 var sticky = nav.offsetTop;
 
 function nav() {
@@ -36,7 +30,6 @@ function nav() {
 
 // new bunker
 var newBunker = document.querySelector(".newbunker-content");
-
 var sticky = newBunker.offsetTop;
 
 function newBunker() {

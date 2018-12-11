@@ -31,6 +31,9 @@ if (mapElement) {
   // Set the map zoom depending on the number of markers
   if (markers.length === 0) {
     map.setZoom(1);
+  } else if (markers.length >= 2) {
+    map.setZoom(0.3);
+    map.setCenter([markers[5].lng, markers[0].lat]);
   } else if (markers.length === 1) {
     map.setZoom(8);
     map.setCenter([markers[0].lng, markers[0].lat]);
