@@ -1,10 +1,6 @@
 window.onscroll = function() {
-  titleCard();
-};
-window.onscroll = function() {
   nav();
-};
-window.onscroll = function() {
+  titleCard();
   newBunker();
 };
 
@@ -46,3 +42,5 @@ function newBunker() {
     newBunker.classList.remove("sticky");
   }
 }
+
+// map
