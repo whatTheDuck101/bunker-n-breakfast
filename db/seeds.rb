@@ -190,7 +190,7 @@ Bunker.create(
   name: "Homey Bunker",
   address: "Lhuntse, Bhutan",
   price: 6328362.0, 
-  description: "Protected by water",
+  description: "High in the mountains.",
   latitude: 27.862273,
   longitude: 91.039048,
   photo: File.open(Rails.root.join("app", "assets", "images", "bunker15.jpg"))
