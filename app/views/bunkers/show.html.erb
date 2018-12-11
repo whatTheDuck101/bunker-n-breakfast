@@ -34,7 +34,8 @@
           <% if current_user == @bunker.user %>
             <p class="yours">Your bunker</p>
           <% elsif current_user != @bunker.user &&  @bunker.is_available %>
-            <%= link_to 'Request to book', bunker_bookings_path(@bunker.id), class: 'btn btn-danger btn-lg', method: :post %>
+            <br>
+            <%= link_to 'Request', bunker_bookings_path(@bunker.id), class: "request-button", method: :post %>
           <% end %>
         </div>
       </div>
