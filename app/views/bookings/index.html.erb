@@ -17,6 +17,7 @@
               </div>
               <div class="index-line"></div>
               <div class="bookings-card-name"><h6><%= booking.bunker.name %></h6></div>
+              <i class="fas fa-dollar-sign"></i> <%= number_with_delimiter(booking.bunker.price, :delimiter => ',') %>
               <div class="bookings-card-status">
                 <% if booking.status == "pending" %>
                   <p><%= booking.created_at.strftime("%c") %></p>

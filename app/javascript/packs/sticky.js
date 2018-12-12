@@ -1,7 +1,6 @@
 window.onscroll = function() {
   nav();
   titleCard();
-  newBunker();
 };
 
 // title show
@@ -25,17 +24,5 @@ function nav() {
     nav.classList.add("sticky");
   } else {
     nav.classList.remove("sticky");
-  }
-}
-
-// new bunker
-var newBunker = document.querySelector(".newbunker-content");
-var sticky = newBunker.offsetTop;
-
-function newBunker() {
-  if (window.pageYOffset >= sticky) {
-    newBunker.classList.add("sticky");
-  } else {
-    newBunker.classList.remove("sticky");
   }
 }

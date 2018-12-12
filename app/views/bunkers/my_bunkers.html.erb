@@ -1,95 +1,106 @@
-<div class="cover-photo" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= image_path 'endoftheworld-earth.jpg'%>)">
-
-  <div id="newbunker">
-
-    <div class="newbunker-content">
-      <div>
-        <span><i class="fas fa-exclamation-triangle">
-        Host a Bunker
-        <span><i class="fas fa-exclamation-triangle"></i></span>
-        </i></span>
-      </div>
-      <div>
-        <% if policy(Bunker).new? %>
-        <%= link_to 'Add a New Bunker', new_bunker_path, class: 'btn btn-danger btn-lg' %>
-        <% end %>
-      </div>
+<div class="bookings-banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= image_path 'endoftheworld-earth.jpg'%>)">
+  <div class="newbunker-content">
+    <div class="add-1">
+      <h4><i class="fas fa-exclamation-triangle"></i>
+      Host a Bunker <i class="fas fa-exclamation-triangle"></i></h4>
+      <% if policy(Bunker).new? %>
+        <%= link_to 'Add Your Bunker', new_bunker_path, class: 'btn btn-success btn-lg' %>
+      <% end %>
     </div>
-
-
-    <div class="container">
-      <div id="container-bunker">
-        <h2><strong>My Bunkers</strong></h2>
-        <div class="row">
-          <% @bunkers.each do |bunker| %>
-            <div class="col-xs-4">
-              <div class="card">
-                  <div class="card-body">
-                  <div class="flat-card-image" style="background-image: url(<%= cl_image_path bunker.photo%>)"></div>
-                  <h5 class="card-title"><strong><%= bunker.name %></strong></h5>
-                  <p class="card-text">
-                  <span><i class="fas fa-map-marker-alt"> <%= bunker.address %></i></span>
-                  </p>
-                  <p class="card-text">
-                  <span><i class="fas fa-dollar-sign"> <%= number_with_delimiter(bunker.price, :delimiter => ',') %> </i></span>
-                  </p>
-                  </div>
-                  <div class="card-footer">
-                      <a href="#" class="btn btn-warning"> Edit </a>
-                      <a href="#" class="btn btn-danger"> Delete </a>
-                  </div>
-                </div>
-              </div>
-            <% end %>
-          </div>
-        </div>
-      </div>
-
-    <div> <br> </div>
-
-    <div class="wrapper-beige">
-      <div class="container">
-        <h2 style="color: black">Requests</h2>
-        <% if current_user.owned_bunkers_bookings.count == 0%>
-          <p>You don't have any requests</p>
-        <% else %>
-
-
-          <div class="container">
-            <% current_user.owned_bunkers_bookings.each do |booking| %>
-              <% if booking.status == "pending"%>
-                <div class="message">
-                  <div class="message-name">
-                    <p><%= booking.bunker.name %></p>
-                  </div>
-                   <div class="message-body">
-                    <p><em>Please confirm reservation from <%= booking.user.first_name %></em> </p>
-
-                   </div>
-
-                   <%= cl_image_tag booking.user.photo, class: "card-user" %>
-
-                     <div class="message-status">
-                        <%= link_to "Accept", bunker_booking_path(booking.bunker.id, booking.id, { value: "accepted" }), class: 'btn btn-success', method: :patch %>
-                        <%= link_to "Refuse", bunker_booking_path(booking.bunker.id, booking.id, { value: "denied" }), class: 'btn btn-danger', method: :patch %>
-                     </div>
-                   </div>
-              <% elsif booking.status == "accepted" %>
-                  <div class="message">
-                  <div class="message-name">
-                    <p style="color: black"><%= booking.bunker.name %></p>
-                  </div>
-                   <div class="message-body">
-                    <p style="color: #32B796"><em>Your confirmation is successfully done</em> </p>
-                   </div>
-
-                   </div>
-              <% elsif booking.status == "denied" %>
-            <% end %>
-              <% end %>
-              <% end %>
+    <div class="add-2">
+      <h4><i class="fas fa-exclamation-triangle"></i>
+      Host a Bunker <i class="fas fa-exclamation-triangle"></i></h4>
+      <% if policy(Bunker).new? %>
+        <%= link_to 'Add Your Bunker', new_bunker_path, class: 'btn btn-success btn-lg' %>
+      <% end %>
+    </div>
+    <div class="add-3">
+      <h4><i class="fas fa-exclamation-triangle"></i>
+      Host a Bunker <i class="fas fa-exclamation-triangle"></i></h4>
+      <% if policy(Bunker).new? %>
+        <%= link_to 'Add Your Bunker', new_bunker_path, class: 'btn btn-success btn-lg' %>
+      <% end %>
     </div>
   </div>
 </div>
+<div class="bunkers-cards">
+  <div class="index-card">
+    <h2>My <%= "Bunker".pluralize(@bunkers.count)%></h2>
+    <div class="row">
+      <% if current_user.owned_bunkers_bookings.count == 0%>
+        <%= link_to 'Add a New Bunker', new_bunker_path %>
+      <% else %>
+          <% @bunkers.each do |bunker| %>
+            <div class="col-xs-12 col-sm-6 col-md-4">
+              <div class="card">
+                <div class="card-img-top" style="background-image: url(<%= cl_image_path bunker.photo%>)"></div>
+                <div class="card-body">
+                  <h6 class="card-title"><%= bunker.name %></h6>
+                  <p class="card-text">
+                    <span><i class="fas fa-map-marker-alt"></i> <%= bunker.address %></span>
+                  </p>
+                  <p class="card-text">
+                    <span><i class="fas fa-dollar-sign"></i> <%= number_with_delimiter(bunker.price, :delimiter => ',') %> </span>
+                  </p>
+                  <div class="card-footer">
+                    <a href="#" class="edit"> Edit </a>
+                    <a href="#" class="delete"> Delete </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
+<div class="bunkers-request">
+  <div class="index-card ">
+    <h2><%= "Request".pluralize(current_user.owned_bunkers_bookings.count)%></h2>
+    <div class="row">
+      <% if current_user.owned_bunkers_bookings.count == 0%>
+        <p>No requests</p>
+      <% else %>
+        <% current_user.owned_bunkers_bookings.each do |booking| %>
+          <div class="col-xs-12 col-sm-6" >
+            <div class="bookings-card">
+              <div class="bookings-card-image" style="background-image: url('<%= cl_image_path booking.bunker.photo %>');"></div>
+              <div class="bookings-card-body">
 
+                <div class="bookings-card-header">
+                  <div class="bookings-card-user" style="background-image: url('<%= cl_image_path booking.user.photo %>')"></div>  
+                  <p>Request from <em><%= booking.user.first_name %></em></p>
+                </div>
+                <div class="index-line"></div>
+                <div class="bookings-card-name"><h6><%= booking.bunker.name %></h6></div>
+                <i class="fas fa-dollar-sign"></i> <%= number_with_delimiter(booking.bunker.price, :delimiter => ',') %>
+                <div class="bookings-card-status">
+                  <% if booking.status == "pending"%>
+                    <p>Please decide</p>
+                    <div class="pending">
+                      <div class="button-padding"><%= link_to "Accept", bunker_booking_path(booking.bunker.id, booking.id, { value: "accepted" }), class: 'btn btn-success', method: :patch %></div>
+                      <%= link_to "Refuse", bunker_booking_path(booking.bunker.id, booking.id, { value: "denied" }), class: 'denied-button', method: :patch %>
+                    </div>
+                  <% elsif booking.status == "accepted" %>
+                    <p><em>You have confirmed</em></p>
+                    <div class="accepted">
+                      <h1><i class="fas fa-check-circle"></i></h1>
+                      Confirmed 
+                    </div>
+                  <% elsif booking.status == "denied" %>
+                    <p><em>Request denied</em></p>
 
+                    <div class="rejected">
+                      <h1><i class="fas fa-ban"></i></h1>
+                      Denied 
+                    </div>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

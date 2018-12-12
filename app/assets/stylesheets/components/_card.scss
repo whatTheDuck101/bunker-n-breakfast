@@ -1,9 +1,13 @@
 .card {
   width: 100%;
   height: 20em;
+  margin: 0.5rem 0 1rem 0;
   background: $first;
-  color: $white;
   border-radius: 2px;
+  box-shadow: 3px 2px 2px 0 rgba(0, 0, 0, 0.14),
+    3px 1px 5px 0 rgba(0, 0, 0, 0.12), 3px 3px 1px -2px rgba(0, 0, 0, 0.2);
+  font-family: "Sintony", sans-serif;
+  color: $white;
 }
 
 .card-img-top {
@@ -18,5 +22,20 @@
 .card-text {
   i {
     color: $third;
+  }
+}
+
+.card-footer {
+  position: relative;
+  bottom: 2px;
+  a {
+    font-size: 15px;
+    text-decoration: none;
+  }
+  .edit {
+    color: $third;
+  }
+  .delete {
+    color: $yellow;
   }
 }
