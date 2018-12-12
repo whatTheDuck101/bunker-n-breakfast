@@ -25,11 +25,17 @@
   }
 }
 
-// .card-footer {
-//   .btn.btn-warning {
-//   //   font-family: "Sintony", sans-serif;
-//   //   padding: 2px 12px;
-//   //   margin-bottom: 3.5px;
-//   //   margin-left: 2%;
-//   // }
-// }
+.card-footer {
+  position: relative;
+  bottom: 2px;
+  a {
+    font-size: 15px;
+    text-decoration: none;
+  }
+  .edit {
+    color: $third;
+  }
+  .delete {
+    color: $yellow;
+  }
+}

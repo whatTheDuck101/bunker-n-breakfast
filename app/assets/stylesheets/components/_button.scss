@@ -27,3 +27,17 @@
     text-decoration: none;
   }
 }
+
+.denied-button {
+  color: $red;
+  text-decoration: none;
+  padding: 0 12px;
+  &:hover {
+    color: #e9322d;
+    text-decoration: none;
+  }
+}
+
+.button-padding {
+  margin-bottom: 10px;
+}
