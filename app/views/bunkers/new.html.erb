@@ -1,24 +1,17 @@
 <div class="" style="background-image: url(<%= image_path 'endoftheworld.jpg'%>)">
   <div class="container">
-  <div class="row">
-    <div class="col-md-5 col-md-offset-3">
-      <div = class="box-trans">
-       <h2>Host a new Bunker</h2>
+    <h2>Your Bunker </h2>
 
-        <%= simple_form_for @bunker do |f| %>
-          <%= f.input :name %>
-          <%= f.input :address %>
-          <%= f.input :price %>
-          <%= f.input :description %>
-          <%= f.input :photo %>
-          <%= f.input :photo_cache, as: :hidden %>
-          <%= f.button :submit, class: 'btn btn-primary' %>
-        <% end %>
-       </div>
-     </div>
-    </div>
+    <%= simple_form_for @bunker do |f| %>
+      <%= f.input :name %>
+      <%= f.input :address %>
+      <%= f.input :price %>
+      <%= f.input :description %>
+      <%= f.input :photo %>
+      <%= f.input :photo_cache, as: :hidden %>
+      <%= f.button :submit, class: 'btn btn-primary' %>
+    <% end %>
   </div>
- </div>
 </div>
 
 
