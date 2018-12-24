@@ -1,7 +1,7 @@
 STATUS = ["pending", "accepted", "denied"]
 
 class Booking < ApplicationRecord
-  mount_uploader :picture, PhotoUploader
+  # mount_uploader :photo, PhotoUploader
   belongs_to :user
   belongs_to :bunker
   validates :status, inclusion: { in: STATUS }
